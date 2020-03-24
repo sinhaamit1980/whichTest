@@ -7,7 +7,6 @@ class TelevisionLandingPage < SitePrism::Page
   element :lg_brand_checkbox, 'div[data-which-id="sticky-facets-container"] label[for="brands_lg"]'
   element :samsung_brand_checkbox, 'div[data-which-id="sticky-facets-container"] label[for="brands_samsung"]'
   element :filter_done_button, 'div[data-which-id="more_filters-filter-summary"] button[data-which-id="done-button"]'
-  element :sort_select_box, '#product_listing_sorter'
 
   sections :product_cards, 'ul[data-test-element="product-list"] li#product-card-wrapper div[data-which-id="product-card"]' do
     element :product_brand, 'div[data-which-id="manufacturer-model"] span:nth-child(1)'
@@ -24,7 +23,7 @@ class TelevisionLandingPage < SitePrism::Page
         Capybara.scroll_to(Capybara.find('div[data-which-id="sticky-facets-container"] input#brands_samsung'), align: :center)
         samsung_brand_checkbox.click
     end
-
+    wait_until {filter_done_button.visible?}
     filter_done_button.click
   end
 

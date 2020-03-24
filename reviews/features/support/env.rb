@@ -11,6 +11,8 @@ require 'pry'
 require 'capybara/poltergeist'
 require 'webdrivers'
 require 'waitutil'
+require_relative 'helpers'
+include Helpers
 
 ENV["BASE_URL"] ||= 'https://www.which.co.uk'
 
