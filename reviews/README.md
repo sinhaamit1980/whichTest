@@ -6,7 +6,7 @@ This is a short guide to installing and running the Which? tests.
 ##Clone the tests
 
 ```bash
-git clone git@github.com:DFEAGILEDEVOPS/MTC.git
+git clone https://github.com/sinhaamit1980/whichTest.git
 ```
 
 ##Install RVM stable with ruby
@@ -29,14 +29,22 @@ Go to the folder /reviews and run the following commands:
 
 These two commands will install all the gems that the tests need.
 
+##Installing Chromedriver
+Download Chrome Driver from following location
+
+https://sites.google.com/a/chromium.org/chromedriver/
+
+Download it your local folder and add that folder in your PATH
+
 ## Running the tests
 
 #####Basic
 
-To run the tests with the default options give the command below:
+To run the tests with the default options use the below command:
 
 `rake features`
-Note: if no `DRIVER` is passed in, the default driver will be used which is Chrome
+
+Note: if no `DRIVER` is passed in, the default driver will be used, which is Chrome
   
 
 If you want to run the tests in safari
